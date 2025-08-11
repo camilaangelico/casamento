@@ -3,11 +3,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Charm:wght@400;700&family=Pinyon+Script&display=swap');
 
 :root{
-    --cor0: #ca3c93;
-    --cor1: #f8caea;
-    --cor2: #ca2c92;
-    --cor3: #ca2c9313;
-    --cor4: #5329ec;
+    --cor-link: #ca3c93;
+    --cor-fundo: #f8caea;
+    --cor-texto: #ca2c92;
+    --cor-fundo-blocos: #ca2c9313;
+    --cor-link-hover: #5329ec;
 
     --fonte-padrao: 'Open Sans', Arial, sans-serif;
     --fonte-titulos: charm, cursive;
@@ -17,7 +17,6 @@
 *{
     margin: 0px;
     padding: 0px;
-    overflow: hidden;
 }
 
 body{
@@ -30,12 +29,11 @@ header{
     text-align: center;
     padding: 8px;
     padding-bottom: 0px;
-    background-color: var(--cor1);
-    max-height: 29vh;
+    background-color: var(--cor-fundo);
 }
 
 h1, p, a{
-    color: var(--cor2);
+    color: var(--cor-texto);
 }
 
 header h1{
@@ -57,42 +55,37 @@ header nav{
 
 header nav a{
     text-decoration: none;
-    padding: 2px;
+    padding: 5px;
     margin-bottom: 5px;
-    color: var(--cor0);
+    color: var(--cor-link);
 }
 
 header nav a:hover{
     color: #fff;
-    background-color: var(--cor2);
+    background-color: var(--cor-texto);
 }
 
 main{
     text-align: center;
-    margin: auto;
+    justify-content: center;
     flex: 1;
     display: flex;
-    align-items: stretch;
+    overflow-y: auto;
 }
 
 .bloco{
     padding: 10px;
-    background-color: var(--cor3);
-    min-width: 290px;
-    width: 70vw;
+    background-color: var(--cor-fundo-blocos);
+    max-width: 95vw;
 }
 
 .images img{
     padding: 5px;
-    min-height: 100px;
-    max-height: 330px;
-    background-position: bottom bottom;
-    background-repeat: no-repeat;
-    background-size: contain;
+    max-height: 290px;
+    object-fit: contain;
 }
 
 .texto{
-    padding: 5px;
     text-align: justify;
     flex-grow: 1;
 }
@@ -102,11 +95,23 @@ main{
     max-width: 60vw;
 }
 
+@media (min-width: 768px){
+    main #fotos {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 2px;
+    }
+
+    main #fotos img{
+        max-width: 325px;
+    }
+}
+
 footer{
-    min-height: 2.5vh;
     text-align: center;
     padding: 10px;
-    background-color: var(--cor1);
+    background-color: var(--cor-fundo);
 }
 
 footer a{
@@ -116,5 +121,5 @@ footer a{
 
 footer a:hover{
     text-decoration: underline;
-    color: var(--cor4);
+    color: var(--cor-link-hover);
 }
